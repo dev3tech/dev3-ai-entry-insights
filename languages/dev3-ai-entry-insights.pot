@@ -1,0 +1,2683 @@
+# Copyright (C) 2026 DEV3 Technologies
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: DEV3 AI Entry Insights for Gravity Forms & WPForms 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/dev3-ai-entry-insights\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-25T05:32:55+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: dev3-ai-entry-insights\n"
+
+#. Plugin Name of the plugin
+#: dev3-ai-entry-insights.php
+msgid "DEV3 AI Entry Insights for Gravity Forms & WPForms"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: dev3-ai-entry-insights.php
+msgid "https://dev3.tech/item/dev3-ai-entry-insights"
+msgstr ""
+
+#. Description of the plugin
+#: dev3-ai-entry-insights.php
+msgid "AI summary, sentiment, intent, urgency and lead score for every Gravity Forms, WPForms and Contact Form 7 entry, with reply drafts, auto-tagging and an insights dashboard."
+msgstr ""
+
+#. Author of the plugin
+#: dev3-ai-entry-insights.php
+msgid "DEV3 Technologies"
+msgstr ""
+
+#. Author URI of the plugin
+#: dev3-ai-entry-insights.php
+msgid "https://dev3.tech"
+msgstr ""
+
+#: includes/Adapters/Adapter.php:106
+msgid "This form plugin does not store entries."
+msgstr ""
+
+#: includes/Adapters/CF7_Adapter.php:100
+msgid "Contact Form 7 does not store submissions. New submissions are captured from now on."
+msgstr ""
+
+#: includes/Adapters/Gravity_Forms_Adapter.php:348
+#: includes/Adapters/WPForms_Adapter.php:293
+#: includes/Insights/Analyzer.php:141
+#: includes/Rest/Admin_Controller.php:160
+msgid "Entry not found."
+msgstr ""
+
+#: includes/Adapters/Gravity_Forms_Adapter.php:351
+#: includes/Adapters/WPForms_Adapter.php:309
+msgid "Entry skipped (empty or capture off)."
+msgstr ""
+
+#: includes/Adapters/Gravity_Forms_Adapter.php:375
+#: includes/Rest/Admin_Controller.php:372
+msgid "This entry is not linked to a Gravity Forms entry."
+msgstr ""
+
+#. translators: 1: summary, 2: score, 3: reason, 4: category, 5: sentiment, 6: urgency
+#: includes/Adapters/Gravity_Forms_Adapter.php:381
+#, php-format
+msgid ""
+"DEV3 AI Entry Insights\n"
+"%1$s\n"
+"Lead score: %2$d (%3$s)\n"
+"Category: %4$s · Sentiment: %5$s · Urgency: %6$s"
+msgstr ""
+
+#: includes/Adapters/Gravity_Forms_Adapter.php:393
+msgid "Summary added as a Gravity Forms note."
+msgstr ""
+
+#: includes/Adapters/Gravity_Forms_Adapter.php:408
+#: includes/Admin/Admin_Page.php:40
+msgid "DEV3 AI Entry Insights"
+msgstr ""
+
+#: includes/Adapters/Gravity_Forms_Adapter.php:435
+msgid "This entry was submitted before DEV3 AI Entry Insights was active. Import it from the Forms screen."
+msgstr ""
+
+#: includes/Adapters/Gravity_Forms_Adapter.php:442
+#: build/admin.js:6
+#: build/admin.js:10
+msgid "Lead score"
+msgstr ""
+
+#: includes/Adapters/Gravity_Forms_Adapter.php:445
+#: build/admin.js:10
+msgid "Category"
+msgstr ""
+
+#: includes/Adapters/Gravity_Forms_Adapter.php:446
+#: build/admin.js:10
+msgid "Sentiment"
+msgstr ""
+
+#: includes/Adapters/Gravity_Forms_Adapter.php:447
+#: build/admin.js:10
+msgid "Urgency"
+msgstr ""
+
+#: includes/Adapters/Gravity_Forms_Adapter.php:449
+#: build/admin.js:8
+msgid "Intent"
+msgstr ""
+
+#: includes/Adapters/Gravity_Forms_Adapter.php:455
+msgid "Open in DEV3 AI Entry Insights"
+msgstr ""
+
+#: includes/Adapters/Registry.php:119
+msgid "The form plugin is not active."
+msgstr ""
+
+#: includes/Adapters/WPForms_Adapter.php:248
+msgid "WPForms Lite does not store entries. New submissions are captured from now on."
+msgstr ""
+
+#: includes/Admin/Admin_Page.php:69
+#: build/admin.js:10
+msgid "Settings"
+msgstr ""
+
+#: includes/Core3/Api/Ai.php:212
+msgid "Unsupported image type."
+msgstr ""
+
+#: includes/Core3/Api/Ai.php:216
+msgid "The image data is invalid."
+msgstr ""
+
+#: includes/Core3/Api/Ai.php:292
+msgid "AI features are turned off."
+msgstr ""
+
+#: includes/Core3/Api/Ai.php:292
+msgid "Turn AI back on in API Config."
+msgstr ""
+
+#: includes/Core3/Api/Ai.php:294
+msgid "Storefront AI is turned off."
+msgstr ""
+
+#: includes/Core3/Api/Ai.php:294
+msgid "Turn storefront AI back on in API Config."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:49
+msgid "No Gemini API key is configured."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:50
+msgid "Open the plugin settings → API Config and paste a key from Google AI Studio."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:63
+msgid "AI paused: the monthly AI budget is reached."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:64
+msgid "Raise the monthly cap in API Config, or wait until the budget resets on the 1st of next month."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:80
+msgid "The AI service took too long to respond."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:81
+msgid "Try again, shorten the prompt, lower Max Output Tokens, or switch to the faster model."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:89
+msgid "Your server could not reach the AI service (Google Gemini API)."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:90
+msgid "Check the server's internet connection or firewall (outbound HTTPS to generativelanguage.googleapis.com)."
+msgstr ""
+
+#. translators: %s: transport error message.
+#: includes/Core3/Api/Api_Error.php:98
+#, php-format
+msgid "Request to the AI service failed: %s"
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:99
+#: includes/Core3/Api/Gemini_Client.php:250
+#: includes/Core3/Api/Gemini_Client.php:422
+msgid "Try again in a moment."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:128
+msgid "The Gemini API key is not valid."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:129
+msgid "Create a new key in Google AI Studio and paste it in API Config."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:137
+msgid "Your Gemini quota is exhausted."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:137
+msgid "AI rate limit reached."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:139
+msgid "Wait for the quota to reset, enable billing on your Google Cloud project, or switch to a model with remaining quota."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:140
+msgid "Wait a few seconds and try again."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:148
+msgid "This API key is not allowed to use Gemini."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:149
+msgid "Enable the Generative Language API for the key's project, and check any key restrictions (HTTP referrer / IP)."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:156
+msgid "The selected Gemini model is not available."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:157
+msgid "Pick another model in API Config — click \"Refresh models\" to load the ones your key can use."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:164
+msgid "The AI service is not available in your server's region."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:165
+msgid "Host the site in a supported region or use a key from a supported project."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:172
+msgid "The AI service is temporarily unavailable."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:173
+msgid "This is on Google's side. Try again shortly or switch models."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:180
+msgid "The AI service rejected the request."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:181
+msgid "Adjust the prompt or settings and try again."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:250
+msgid "The AI returned an incomplete embedding batch."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:368
+msgid "The AI blocked this image request for safety reasons."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:368
+msgid "The AI did not return an image."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:369
+#: includes/Core3/Api/Gemini_Client.php:472
+#: includes/Core3/Api/Gemini_Client.php:508
+msgid "Rephrase the prompt and try again."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:369
+msgid "Try again, or describe the image more concretely."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:421
+msgid "The AI returned malformed data."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:471
+msgid "The AI blocked this request for safety reasons."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:507
+msgid "The AI stopped because the response was flagged."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:515
+msgid "The AI ran out of output tokens before writing an answer."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:516
+msgid "Increase Max Output Tokens in API Config, or set Reasoning to \"Low\"."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:523
+msgid "The AI returned an empty response."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:524
+msgid "Try again or rephrase the prompt."
+msgstr ""
+
+#: includes/Core3/Api/Prompts.php:124
+msgid "Unknown prompt template."
+msgstr ""
+
+#: includes/Core3/Core/Jobs.php:90
+msgid "Unknown job type."
+msgstr ""
+
+#: includes/Core3/Core/Jobs.php:116
+msgid "The job could not be saved."
+msgstr ""
+
+#: includes/Core3/Core/Jobs.php:238
+#: build/admin.js:1
+msgid "Failed"
+msgstr ""
+
+#: includes/Core3/Core/Jobs.php:339
+#: includes/Core3/Rest/Core_Controller.php:112
+msgid "Job not found."
+msgstr ""
+
+#: includes/Core3/Core/Privacy.php:33
+#: includes/Core3/Core/Privacy.php:34
+#: includes/Core3/Core/Privacy.php:165
+msgid "AI usage log"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: includes/Core3/Core/Privacy.php:85
+#, php-format
+msgid "This site uses %s, which sends the content needed for AI features (for example product details, reviews or form text) to Google Gemini, operated by Google LLC, as a data processor. Only the fields needed for the requested feature are sent. Google's terms and privacy policy apply: https://ai.google.dev/gemini-api/terms"
+msgstr ""
+
+#: includes/Core3/Core/Privacy.php:87
+msgid "The plugin keeps a usage log (time, feature, token counts and the user account that triggered the request) to show AI usage and costs to administrators. It does not store the prompts."
+msgstr ""
+
+#: includes/Core3/Core/Privacy.php:169
+msgid "Feature"
+msgstr ""
+
+#: includes/Core3/Core/Privacy.php:173
+#: build/admin.js:1
+msgid "Model"
+msgstr ""
+
+#: includes/Core3/Core/Privacy.php:177
+#: build/admin.js:1
+msgid "Tokens"
+msgstr ""
+
+#: includes/Core3/Core/Privacy.php:181
+msgid "Date"
+msgstr ""
+
+#: includes/Core3/Data/Usage_Repository.php:194
+msgid "Deleted user"
+msgstr ""
+
+#: includes/Core3/Rest/Base_Controller.php:72
+msgid "Your session has expired. Reload the editor and try again."
+msgstr ""
+
+#: includes/Core3/Rest/Base_Controller.php:75
+#: includes/Core3/Rest/Core_Controller.php:115
+#: includes/Export/Csv.php:101
+#: includes/Rest/Admin_Controller.php:392
+#: includes/Rest/Admin_Controller.php:631
+msgid "You do not have permission to do that."
+msgstr ""
+
+#: includes/Core3/Rest/Base_Controller.php:94
+msgid "Cross-origin requests are not allowed."
+msgstr ""
+
+#: includes/Core3/Rest/Base_Controller.php:104
+msgid "Too many requests. Please wait a moment."
+msgstr ""
+
+#: includes/Data/Entries.php:447
+#: build/admin.js:4
+#: build/admin.js:10
+msgid "Form"
+msgstr ""
+
+#: includes/Data/Entries.php:451
+msgid "Submitted"
+msgstr ""
+
+#: includes/Data/Entries.php:462
+msgid "Summary (AI)"
+msgstr ""
+
+#: includes/Data/Entries.php:467
+msgid "Form entries (DEV3 AI Entry Insights)"
+msgstr ""
+
+#: includes/Insights/Alerts.php:27
+#: build/admin.js:1
+msgid "Sales lead"
+msgstr ""
+
+#: includes/Insights/Alerts.php:28
+#: build/admin.js:1
+msgid "Quote request"
+msgstr ""
+
+#: includes/Insights/Alerts.php:29
+#: build/admin.js:1
+msgid "Support"
+msgstr ""
+
+#: includes/Insights/Alerts.php:30
+#: build/admin.js:1
+msgid "Feedback"
+msgstr ""
+
+#: includes/Insights/Alerts.php:31
+#: build/admin.js:1
+msgid "Complaint"
+msgstr ""
+
+#: includes/Insights/Alerts.php:32
+#: build/admin.js:1
+msgid "Booking"
+msgstr ""
+
+#: includes/Insights/Alerts.php:33
+#: build/admin.js:1
+msgid "Job application"
+msgstr ""
+
+#: includes/Insights/Alerts.php:34
+#: build/admin.js:1
+msgid "Partnership"
+msgstr ""
+
+#: includes/Insights/Alerts.php:35
+#: build/admin.js:1
+msgid "Newsletter"
+msgstr ""
+
+#: includes/Insights/Alerts.php:36
+#: build/admin.js:1
+msgid "Spam"
+msgstr ""
+
+#: includes/Insights/Alerts.php:37
+#: build/admin.js:1
+msgid "Other"
+msgstr ""
+
+#: includes/Insights/Alerts.php:83
+msgid "Hot lead"
+msgstr ""
+
+#: includes/Insights/Alerts.php:84
+msgid "Urgent entry"
+msgstr ""
+
+#: includes/Insights/Alerts.php:85
+msgid "Unhappy sender"
+msgstr ""
+
+#: includes/Insights/Alerts.php:88
+msgid "Someone"
+msgstr ""
+
+#. translators: 1: alert type, 2: score, 3: form, 4: sender
+#: includes/Insights/Alerts.php:91
+#, php-format
+msgid "[%1$s · %2$d] %3$s: %4$s"
+msgstr ""
+
+#. translators: %d: lead score
+#: includes/Insights/Alerts.php:101
+#, php-format
+msgid "Lead score: %d / 100"
+msgstr ""
+
+#. translators: %s: category
+#: includes/Insights/Alerts.php:103
+#, php-format
+msgid "Category: %s"
+msgstr ""
+
+#. translators: 1: urgency, 2: sentiment
+#: includes/Insights/Alerts.php:105
+#, php-format
+msgid "Urgency: %1$s · Sentiment: %2$s"
+msgstr ""
+
+#. translators: %s: email
+#: includes/Insights/Alerts.php:106
+#, php-format
+msgid "Reply to: %s"
+msgstr ""
+
+#. translators: %s: URL
+#: includes/Insights/Alerts.php:109
+#, php-format
+msgid "Open the entry: %s"
+msgstr ""
+
+#: includes/Insights/Digest.php:36
+msgid "At least 3 entries in the period are needed for a trend digest."
+msgstr ""
+
+#: includes/Insights/Rules.php:74
+msgid "left a phone number"
+msgstr ""
+
+#: includes/Insights/Rules.php:80
+msgid "uses a company email"
+msgstr ""
+
+#: includes/Insights/Rules.php:85
+msgid "named a company"
+msgstr ""
+
+#: includes/Insights/Rules.php:89
+msgid "shared a budget"
+msgstr ""
+
+#: includes/Insights/Rules.php:93
+msgid "mentions buying intent"
+msgstr ""
+
+#: includes/Insights/Rules.php:97
+msgid "has a tight timeline"
+msgstr ""
+
+#: includes/Insights/Rules.php:100
+msgid "wrote a detailed message"
+msgstr ""
+
+#: includes/Insights/Rules.php:104
+msgid "sounds unhappy"
+msgstr ""
+
+#. translators: %s: keyword
+#: includes/Insights/Rules.php:111
+#, php-format
+msgid "mentions \"%s\""
+msgstr ""
+
+#: includes/Insights/Rules.php:117
+msgid "looks like spam"
+msgstr ""
+
+#: includes/Insights/Rules.php:126
+msgid "Little buying signal in the answers."
+msgstr ""
+
+#: includes/Plugin.php:133
+#: includes/Plugin.php:134
+msgid "Form entries"
+msgstr ""
+
+#: includes/Reply/Replies.php:31
+msgid "there"
+msgstr ""
+
+#: includes/Reply/Replies.php:60
+msgid "Template not found."
+msgstr ""
+
+#: includes/Reply/Replies.php:73
+#: includes/Reply/Replies.php:122
+msgid "This entry has no email address to reply to."
+msgstr ""
+
+#: includes/Reply/Replies.php:127
+msgid "Add a subject and a message."
+msgstr ""
+
+#: includes/Reply/Replies.php:154
+msgid "The email could not be sent. Check your site's mail settings."
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:234
+msgid "Unknown status."
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:254
+msgid "Internal note updated."
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:388
+msgid "Pick entries and an action."
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:427
+msgid "Enter a tag."
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:478
+msgid "Nothing to pin."
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:569
+#: includes/Rest/Admin_Controller.php:593
+msgid "Unknown form."
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:598
+msgid "Unknown form plugin."
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:612
+msgid "Everything is imported already."
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:654
+msgid "No entries to analyse."
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:672
+#: build/admin.js:10
+msgid "Email"
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:673
+#: build/admin.js:10
+msgid "Phone"
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:674
+#: build/admin.js:10
+msgid "Company"
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:675
+#: build/admin.js:6
+#: build/admin.js:8
+#: build/admin.js:10
+msgid "Message"
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:680
+msgid "Type a sample message."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Request cancelled."
+msgstr ""
+
+#: build/admin.js:1
+msgid "You appear to be offline."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Check your internet connection, then try again."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Could not reach your WordPress site."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Check your connection or reload the editor."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Your session has expired."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Save your work and reload the page."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Something went wrong."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Loading"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Generating…"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Generate with DEV3 AI"
+msgstr ""
+
+#: build/admin.js:1
+#: build/admin.js:8
+msgid "Dismiss"
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI paused: monthly budget reached"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Adjust the cap"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Try again"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Queued"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Running"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Done"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Cancelled"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Background job"
+msgstr ""
+
+#. translators: 1: processed, 2: total, 3: percent
+#: build/admin.js:1
+#, js-format
+msgid "%1$s of %2$s processed (%3$s%%)"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Starting…"
+msgstr ""
+
+#. translators: %s: failed count
+#: build/admin.js:1
+#, js-format
+msgid "%s failed"
+msgstr ""
+
+#: build/admin.js:1
+#: build/admin.js:8
+#: build/admin.js:10
+msgid "Cancel"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Resume"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Retry failed"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Show failed items"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Estimated AI spend this month"
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI paused"
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI off"
+msgstr ""
+
+#. translators: %s: cap
+#: build/admin.js:1
+#, js-format
+msgid "of %s cap"
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI turned off"
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI paused · cap reached"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Near cap"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Monthly AI budget used"
+msgstr ""
+
+#. translators: 1: requests, 2: tokens
+#: build/admin.js:1
+#, js-format
+msgid "%1$s requests · %2$s tokens"
+msgstr ""
+
+#. translators: %s: date
+#: build/admin.js:1
+#, js-format
+msgid "resets %s"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Set a monthly cap"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Dismiss notification"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Choose from list"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Custom model ID…"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Google Gemini API key"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Create a free key in Google AI Studio, paste it here and click “Validate & save”. The key is encrypted in your database and never sent to the browser."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Get an API key"
+msgstr ""
+
+#: build/admin.js:1
+msgid "(opens in a new tab)"
+msgstr ""
+
+#: build/admin.js:1
+msgid "The key is defined by the DEV3EI_GEMINI_API_KEY constant in wp-config.php."
+msgstr ""
+
+#: build/admin.js:1
+msgid "API key"
+msgstr ""
+
+#. translators: %d: number of models
+#: build/admin.js:1
+#, js-format
+msgid "Connected — %d models available to this key."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Validate & save"
+msgstr ""
+
+#: build/admin.js:1
+msgid "API key removed."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Remove key"
+msgstr ""
+
+#: build/admin.js:1
+msgid "OpenSSL is not available on this server, so the key is only obfuscated. Consider defining DEV3EI_GEMINI_API_KEY in wp-config.php instead."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Models & generation"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Fast is used for most tasks; Pro for complex, long-form or structured work."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Refresh models"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Engine settings saved."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Save engine settings"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Fast model"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Recommended: gemini-2.5-flash"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Pro model"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Recommended: gemini-2.5-pro"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Image model"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Used for image generation. Default: gemini-2.5-flash-image"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Embedding model"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Used for semantic search. Default: gemini-embedding-001"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Temperature"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Lower = focused and consistent, higher = more creative (0–1)."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Max output tokens"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Upper limit per answer."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Reasoning"
+msgstr ""
+
+#: build/admin.js:1
+msgid "“Low” keeps generations fast and cheap; “Auto” lets the model think longer."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Low (fast)"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Auto (model decides)"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Budget & safety"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Costs are estimated from token counts and Google’s list prices. Check exact billing in Google AI Studio."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Budget and safety settings saved."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Save budget & safety"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Monthly AI budget cap"
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI pauses when the estimated spend this month reaches the cap. 0 = no cap."
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI features"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Turn off to stop every AI call. The plugin keeps working without AI."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Storefront AI"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Kill switch for visitor-facing AI. Visitors get the non-AI fallback."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Cache AI results"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Reuse answers for identical requests to save tokens."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Mask personal data"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Replace emails, phone and card numbers before text is sent to Google Gemini."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Pagination"
+msgstr ""
+
+#. translators: 1: first row, 2: last row, 3: total rows
+#: build/admin.js:1
+#, js-format
+msgid "%1$s–%2$s of %3$s"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Previous page"
+msgstr ""
+
+#. translators: 1: page, 2: pages
+#: build/admin.js:1
+#, js-format
+msgid "Page %1$s of %2$s"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Next page"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Actions"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Nothing here yet"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Sort by"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Default"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Requests"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Est. cost"
+msgstr ""
+
+#: build/admin.js:1
+msgid "No requests yet"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Token counts come from the AI provider’s usage metadata; costs are estimates. Check exact billing in Google AI Studio / Cloud Console."
+msgstr ""
+
+#: build/admin.js:1
+#: build/admin.js:4
+msgid "Period"
+msgstr ""
+
+#: build/admin.js:1
+#: build/admin.js:4
+msgid "Last 7 days"
+msgstr ""
+
+#: build/admin.js:1
+#: build/admin.js:4
+msgid "Last 30 days"
+msgstr ""
+
+#: build/admin.js:1
+#: build/admin.js:4
+msgid "Last 90 days"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Total tokens"
+msgstr ""
+
+#. translators: 1: input, 2: output
+#: build/admin.js:1
+#, js-format
+msgid "%1$s in · %2$s out"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Avg. response"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Errors"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Requests per day"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Requests per day chart"
+msgstr ""
+
+#. translators: 1: date, 2: requests, 3: tokens
+#: build/admin.js:1
+#, js-format
+msgid "%1$s — %2$s requests, %3$s tokens"
+msgstr ""
+
+#: build/admin.js:1
+msgid "No requests in this period yet"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Usage appears here as soon as an AI feature runs."
+msgstr ""
+
+#: build/admin.js:1
+msgid "By task"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Task"
+msgstr ""
+
+#: build/admin.js:1
+msgid "By model"
+msgstr ""
+
+#: build/admin.js:1
+msgid "By user"
+msgstr ""
+
+#: build/admin.js:1
+msgid "User"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Recent requests"
+msgstr ""
+
+#: build/admin.js:1
+msgid "No requests logged yet"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Time"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Where"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Time (s)"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Status"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Plugin sections"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Section"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Close"
+msgstr ""
+
+#: build/admin.js:1
+msgid "DEV3 AI draft"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Accept"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Changes"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Side by side"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Draft"
+msgstr ""
+
+#: build/admin.js:1
+#: build/admin.js:5
+msgid "Not saved yet"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Draft view"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Edit JSON"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Edit draft"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Current"
+msgstr ""
+
+#. translators: %s: token count
+#: build/admin.js:1
+#, js-format
+msgid "%s tokens"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Cached"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Reject"
+msgstr ""
+
+#: build/admin.js:1
+#: build/admin.js:5
+msgid "Regenerate"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Done editing"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Edit"
+msgstr ""
+
+#: build/admin.js:1
+msgid "The JSON is not valid. Fix it or regenerate."
+msgstr ""
+
+#: build/admin.js:1
+#: build/admin.js:4
+msgid "Positive"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Neutral"
+msgstr ""
+
+#: build/admin.js:1
+#: build/admin.js:4
+#: build/admin.js:5
+msgid "Negative"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Entries per day by sentiment"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Day"
+msgstr ""
+
+#: build/admin.js:1
+msgid "positive"
+msgstr ""
+
+#: build/admin.js:1
+msgid "neutral"
+msgstr ""
+
+#: build/admin.js:1
+msgid "negative"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Gravity Forms"
+msgstr ""
+
+#: build/admin.js:1
+msgid "WPForms"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Contact Form 7"
+msgstr ""
+
+#: build/admin.js:1
+msgid "High"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Medium"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Low"
+msgstr ""
+
+#: build/admin.js:1
+#: build/admin.js:8
+#: build/admin.js:10
+msgid "New"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Read"
+msgstr ""
+
+#: build/admin.js:1
+#: build/admin.js:8
+msgid "Replied"
+msgstr ""
+
+#: build/admin.js:1
+#: build/admin.js:8
+msgid "Archived"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Captured"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Imported"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Analysed by DEV3 AI"
+msgstr ""
+
+#: build/admin.js:1
+msgid "DEV3 AI analysis failed"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Alert sent"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Reply sent"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Reply failed"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Status changed"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Note"
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI tags accepted"
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI tags dismissed"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Gravity Forms note added"
+msgstr ""
+
+#: build/admin.js:1
+msgid "just now"
+msgstr ""
+
+#: build/admin.js:1
+#, js-format
+msgid "%dm ago"
+msgstr ""
+
+#: build/admin.js:1
+#, js-format
+msgid "%dh ago"
+msgstr ""
+
+#: build/admin.js:1
+#, js-format
+msgid "%dd ago"
+msgstr ""
+
+#: build/admin.js:1
+#, js-format
+msgid "Lead score %d out of 100"
+msgstr ""
+
+#. translators: %d: lead score
+#. translators: %s: urgency level
+#: build/admin.js:3
+#, js-format
+msgid "%s urgency"
+msgstr ""
+
+#: build/admin.js:4
+#, js-format
+msgid "Remove tag %s"
+msgstr ""
+
+#: build/admin.js:4
+msgid "Settings saved."
+msgstr ""
+
+#: build/admin.js:4
+msgid "Opportunities"
+msgstr ""
+
+#: build/admin.js:4
+msgid "Risks"
+msgstr ""
+
+#: build/admin.js:4
+msgid "Suggested actions"
+msgstr ""
+
+#: build/admin.js:4
+msgid "Mixed"
+msgstr ""
+
+#: build/admin.js:4
+#: build/admin.js:10
+msgid "All forms"
+msgstr ""
+
+#: build/admin.js:4
+#: build/admin.js:8
+#: build/admin.js:10
+msgid "Insights"
+msgstr ""
+
+#: build/admin.js:4
+msgid "What people ask for, how they feel and which entries are worth your time."
+msgstr ""
+
+#: build/admin.js:4
+msgid "No supported form plugin is active"
+msgstr ""
+
+#: build/admin.js:4
+msgid "See supported plugins"
+msgstr ""
+
+#: build/admin.js:4
+msgid "Activate Gravity Forms, WPForms (Lite or Pro) or Contact Form 7 and new submissions appear here automatically."
+msgstr ""
+
+#: build/admin.js:4
+msgid "Connect DEV3 AI for summaries, intent and smarter lead scores"
+msgstr ""
+
+#: build/admin.js:4
+msgid "Add API key"
+msgstr ""
+
+#: build/admin.js:4
+msgid "Rule-based scores, sentiment, urgency, tags, alerts and reply templates already work without AI."
+msgstr ""
+
+#: build/admin.js:4
+#: build/admin.js:10
+msgid "Entries"
+msgstr ""
+
+#: build/admin.js:4
+msgid "vs. previous period"
+msgstr ""
+
+#: build/admin.js:4
+msgid "Average lead score"
+msgstr ""
+
+#: build/admin.js:4
+#: build/admin.js:8
+msgid "Hot leads"
+msgstr ""
+
+#: build/admin.js:5
+#, js-format
+msgid "Score %d or more"
+msgstr ""
+
+#: build/admin.js:5
+msgid "of entries"
+msgstr ""
+
+#: build/admin.js:5
+#: build/admin.js:6
+#: build/admin.js:8
+msgid "Needs attention"
+msgstr ""
+
+#: build/admin.js:5
+msgid "Open, urgent, unhappy or hot"
+msgstr ""
+
+#: build/admin.js:5
+msgid "Reply rate"
+msgstr ""
+
+#: build/admin.js:5
+msgid "Replied from this plugin"
+msgstr ""
+
+#. translators: %d: entries
+#: build/admin.js:5
+#, js-format
+msgid "%d entries are waiting for DEV3 AI analysis. They are processed in the background and while this screen is open."
+msgstr ""
+
+#: build/admin.js:5
+msgid "Trend digest"
+msgstr ""
+
+#: build/admin.js:5
+msgid "A short read of what changed in the period: themes, opportunities, risks and next steps."
+msgstr ""
+
+#: build/admin.js:5
+msgid "Unpin"
+msgstr ""
+
+#: build/admin.js:5
+msgid "cached"
+msgstr ""
+
+#: build/admin.js:5
+msgid "Digest pinned to the dashboard."
+msgstr ""
+
+#: build/admin.js:5
+msgid "Pin to dashboard"
+msgstr ""
+
+#: build/admin.js:5
+msgid "Discard"
+msgstr ""
+
+#. translators: 1: days, 2: relative time
+#: build/admin.js:6
+#, js-format
+msgid "Last %1$d days · pinned %2$s"
+msgstr ""
+
+#: build/admin.js:6
+msgid "Refresh with DEV3 AI"
+msgstr ""
+
+#: build/admin.js:6
+msgid "DEV3 AI reads the scores and one-line summaries of the period (never names or emails) and writes a digest you can pin here."
+msgstr ""
+
+#: build/admin.js:6
+msgid "Add a Google Gemini API key in API Config to generate trend digests."
+msgstr ""
+
+#: build/admin.js:6
+msgid "Summarize trends with DEV3 AI"
+msgstr ""
+
+#: build/admin.js:6
+msgid "No entries in this period"
+msgstr ""
+
+#: build/admin.js:6
+msgid "New Gravity Forms, WPForms and Contact Form 7 submissions are captured automatically. Import older Gravity Forms or WPForms Pro entries from the Forms screen."
+msgstr ""
+
+#: build/admin.js:6
+msgid "Open Forms"
+msgstr ""
+
+#: build/admin.js:6
+msgid "Entries per day"
+msgstr ""
+
+#: build/admin.js:6
+msgid "Coloured by the sender's sentiment."
+msgstr ""
+
+#: build/admin.js:6
+msgid "Lead score distribution"
+msgstr ""
+
+#: build/admin.js:6
+msgid "Hot leads are highlighted."
+msgstr ""
+
+#: build/admin.js:6
+msgid "What people want"
+msgstr ""
+
+#: build/admin.js:6
+msgid "Categories of the period. Click to see the entries."
+msgstr ""
+
+#: build/admin.js:6
+msgid "Top intents"
+msgstr ""
+
+#: build/admin.js:6
+msgid "Written by DEV3 AI for each entry."
+msgstr ""
+
+#: build/admin.js:6
+msgid "No intents yet"
+msgstr ""
+
+#: build/admin.js:6
+msgid "Intents appear once DEV3 AI has analysed entries."
+msgstr ""
+
+#: build/admin.js:6
+#: build/admin.js:8
+#: build/admin.js:10
+msgid "Tags"
+msgstr ""
+
+#: build/admin.js:6
+msgid "From your auto-tag rules and accepted AI tags."
+msgstr ""
+
+#: build/admin.js:6
+msgid "No tags yet"
+msgstr ""
+
+#: build/admin.js:6
+msgid "Add auto-tag rules in Rules."
+msgstr ""
+
+#: build/admin.js:6
+msgid "All"
+msgstr ""
+
+#: build/admin.js:6
+#: build/admin.js:10
+msgid "Unknown sender"
+msgstr ""
+
+#: build/admin.js:6
+#: build/admin.js:10
+msgid "All caught up"
+msgstr ""
+
+#: build/admin.js:6
+msgid "No open urgent, unhappy or hot entries."
+msgstr ""
+
+#: build/admin.js:6
+#: build/admin.js:10
+msgid "Forms"
+msgstr ""
+
+#. translators: %d: entries
+#: build/admin.js:6
+#, js-format
+msgid "%d entries"
+msgstr ""
+
+#. translators: %d: hot leads
+#: build/admin.js:6
+#, js-format
+msgid "%d hot"
+msgstr ""
+
+#: build/admin.js:6
+msgid "avg"
+msgstr ""
+
+#: build/admin.js:6
+#: build/admin.js:10
+msgid "Friendly"
+msgstr ""
+
+#: build/admin.js:6
+#: build/admin.js:10
+msgid "Professional"
+msgstr ""
+
+#: build/admin.js:6
+#: build/admin.js:10
+msgid "Concise"
+msgstr ""
+
+#: build/admin.js:6
+#: build/admin.js:10
+msgid "Apologetic"
+msgstr ""
+
+#: build/admin.js:6
+#: build/admin.js:10
+msgid "Enthusiastic"
+msgstr ""
+
+#: build/admin.js:6
+#: build/admin.js:8
+#: build/admin.js:10
+msgid "Subject"
+msgstr ""
+
+#: build/admin.js:6
+msgid "Hot lead threshold"
+msgstr ""
+
+#. translators: %s: email
+#: build/admin.js:8
+#, js-format
+msgid "Reply sent to %s."
+msgstr ""
+
+#: build/admin.js:8
+#: build/admin.js:10
+msgid "Entry"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Archived."
+msgstr ""
+
+#: build/admin.js:8
+#: build/admin.js:10
+msgid "Archive"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Moved back to the inbox."
+msgstr ""
+
+#: build/admin.js:8
+msgid "Move to inbox"
+msgstr ""
+
+#: build/admin.js:8
+#: build/admin.js:10
+msgid "Starred"
+msgstr ""
+
+#: build/admin.js:8
+#: build/admin.js:10
+msgid "Star"
+msgstr ""
+
+#: build/admin.js:8
+#: build/admin.js:10
+msgid "Mark as new"
+msgstr ""
+
+#: build/admin.js:8
+#: build/admin.js:10
+msgid "Delete"
+msgstr ""
+
+#. translators: %s: form plugin
+#: build/admin.js:8
+#, js-format
+msgid "Open in %s"
+msgstr ""
+
+#: build/admin.js:8
+msgid "DEV3 AI analysis queued…"
+msgstr ""
+
+#. translators: %s: model
+#: build/admin.js:8
+#, js-format
+msgid "By DEV3 AI · %s"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Rule-based (no AI)"
+msgstr ""
+
+#. translators: %d: rules score
+#: build/admin.js:8
+#, js-format
+msgid "Rules: %d"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Insights updated by DEV3 AI."
+msgstr ""
+
+#: build/admin.js:8
+msgid "Analysing…"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Re-analyze with DEV3 AI"
+msgstr ""
+
+#: build/admin.js:8
+#: build/admin.js:10
+msgid "Analyze with DEV3 AI"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Suggested by DEV3 AI:"
+msgstr ""
+
+#. translators: %s: tag
+#: build/admin.js:8
+#, js-format
+msgid "Add suggested tag %s"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Accept all"
+msgstr ""
+
+#: build/admin.js:8
+msgid "No tags yet."
+msgstr ""
+
+#: build/admin.js:8
+msgid "Add a tag"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Add a tag…"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Add"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Answers"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Sent from"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Reply"
+msgstr ""
+
+#. translators: %s: time
+#: build/admin.js:8
+#, js-format
+msgid "Replied %s"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Tone"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Notes for this reply (optional)"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Facts DEV3 AI may use, e.g. \"We can start on 4 May, the price is $2,400\"."
+msgstr ""
+
+#: build/admin.js:8
+msgid "Draft reply with DEV3 AI"
+msgstr ""
+
+#: build/admin.js:8
+msgid "DEV3 AI reply draft"
+msgstr ""
+
+#. translators: %s: email
+#: build/admin.js:8
+#, js-format
+msgid "Send to %s"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Reply template"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Start from a template…"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Use"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Write a reply yourself"
+msgstr ""
+
+#: build/admin.js:8
+msgid "This entry has no email address, so there is no one to reply to."
+msgstr ""
+
+#: build/admin.js:8
+msgid "Internal note"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Only your team sees this."
+msgstr ""
+
+#: build/admin.js:8
+msgid "Note saved."
+msgstr ""
+
+#: build/admin.js:8
+msgid "Save note"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Added to the Gravity Forms entry notes."
+msgstr ""
+
+#: build/admin.js:8
+msgid "Add insights as Gravity Forms note"
+msgstr ""
+
+#: build/admin.js:8
+msgid "History"
+msgstr ""
+
+#: build/admin.js:8
+#: build/admin.js:10
+msgid "DEV3 AI"
+msgstr ""
+
+#: build/admin.js:8
+msgid "automatic"
+msgstr ""
+
+#: build/admin.js:8
+msgid "a team member"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Delete this entry?"
+msgstr ""
+
+#: build/admin.js:8
+msgid "It is removed from DEV3 AI Entry Insights. A copy stored by Gravity Forms or WPForms Pro is not touched."
+msgstr ""
+
+#: build/admin.js:8
+msgid "Entry deleted."
+msgstr ""
+
+#: build/admin.js:8
+msgid "Inbox"
+msgstr ""
+
+#: build/admin.js:8
+msgid "DEV3 AI is analysing the selected entries in the background."
+msgstr ""
+
+#: build/admin.js:8
+msgid "Re-scoring the selected entries with your rules."
+msgstr ""
+
+#. translators: %d: entries
+#: build/admin.js:10
+#, js-format
+msgid "%d entries updated."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Mark as read"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Remove star"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Add tag…"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Remove tag…"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Move back to inbox"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Re-score with rules (no AI)"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Select"
+msgstr ""
+
+#. translators: %s: sender
+#: build/admin.js:10
+#, js-format
+msgid "Select entry from %s"
+msgstr ""
+
+#: build/admin.js:10
+msgid "DEV3 AI analysing…"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Score"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Insight"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Received"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Every captured submission with its DEV3 AI insights. Click an entry to read, tag and reply."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Export CSV"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Inbox views"
+msgstr ""
+
+#. translators: %d: entries
+#: build/admin.js:10
+#, js-format
+msgid "%d entries are waiting for DEV3 AI. Rule-based insights are shown until the analysis is done."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Analysing entries"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Search entries"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Search names, emails, answers, summaries…"
+msgstr ""
+
+#. translators: %d: active filters
+#: build/admin.js:10
+#, js-format
+msgid "Filters (%d)"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Filters"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Source"
+msgstr ""
+
+#: build/admin.js:10
+msgid "All sources"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Any sentiment"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Any category"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Any urgency"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Tag"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Min. score"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Clear filters"
+msgstr ""
+
+#. translators: %d: selected
+#: build/admin.js:10
+#, js-format
+msgid "%d selected"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Select all"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Bulk action"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Bulk actions"
+msgstr ""
+
+#: build/admin.js:10
+msgid "tag-name"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Apply"
+msgstr ""
+
+#: build/admin.js:10
+msgid "No entries here"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Try another search or filter."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Submissions from your connected forms appear here as they arrive."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Connected forms"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Delete the selected entries?"
+msgstr ""
+
+#: build/admin.js:10
+msgid "This removes them and their insights from DEV3 AI Entry Insights. Entries stored by Gravity Forms or WPForms Pro stay there."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Analysing with DEV3 AI"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Re-scoring with rules"
+msgstr ""
+
+#: build/admin.js:10
+msgid "form removed or plugin inactive"
+msgstr ""
+
+#: build/admin.js:10
+msgid "new"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Avg. score"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Last entry"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Capture"
+msgstr ""
+
+#. translators: %s: form
+#: build/admin.js:10
+#, js-format
+msgid "Capture entries of %s"
+msgstr ""
+
+#. translators: %s: form
+#: build/admin.js:10
+#, js-format
+msgid "Analyze %s with DEV3 AI"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Connected form plugins and what is captured from each form."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Re-score all with rules"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Analyze unanalysed with DEV3 AI"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Active"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Not active"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Capture new submissions"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Capturing turned on."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Capturing turned off."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Existing entries can be imported per form."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Install and activate Gravity Forms to capture its entries."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Install and activate the free plugin to capture its submissions."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Get it"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Import"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Edit form"
+msgstr ""
+
+#: build/admin.js:10
+msgid "No forms found"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Create a form in Gravity Forms, WPForms or Contact Form 7 and it shows up here."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Import existing entries"
+msgstr ""
+
+#. translators: %s: form
+#: build/admin.js:10
+#, js-format
+msgid "Copies the newest entries of \"%s\" into DEV3 AI Entry Insights. Entries imported before are skipped."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Importing entries"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Start import"
+msgstr ""
+
+#: build/admin.js:10
+msgid "How many (newest first)"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Analyze them with DEV3 AI too"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Uses AI tokens for each imported entry."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Add an API key to analyze imported entries."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Reset"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Save"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Replies"
+msgstr ""
+
+#: build/admin.js:10
+msgid "How replies sound and who they come from. Every reply is reviewed and sent by a person."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Brand voice for DEV3 AI drafts"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Default tone"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Sign-off"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Anna from the Northwind team"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Facts and guidelines"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Opening hours, prices you are happy to quote, what to avoid promising. DEV3 AI never invents facts that are not here or in the notes."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Sender"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Replies are sent as plain-text emails with wp_mail. Leave empty to use your site's default sender."
+msgstr ""
+
+#: build/admin.js:10
+msgid "From name"
+msgstr ""
+
+#: build/admin.js:10
+msgid "From email"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Templates"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Canned replies that work without AI. Placeholders: {name}, {first_name}, {form}, {site}, {summary}, {email}."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Template name"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Remove template"
+msgstr ""
+
+#: build/admin.js:10
+msgid "New template"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Add template"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Left a phone number"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Uses a company email (not Gmail, Outlook…)"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Filled a company / organisation field"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Filled a budget / price field"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Mentions buying words (quote, pricing, demo, project…)"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Has a tight timeline (ASAP, today, deadline…)"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Wrote a detailed message (280+ characters)"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Sounds unhappy"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Answers contain (comma-separated)"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Category is"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Sentiment is"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Urgency is"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Lead score is at least"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Form plugin is"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Form key is (e.g. wpforms:12)"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Save rules"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Rules"
+msgstr ""
+
+#: build/admin.js:10
+msgid "How lead scores and tags are calculated. Rules always run, with or without AI."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Score source"
+msgstr ""
+
+#: build/admin.js:10
+msgid "DEV3 AI score (rules when AI is off)"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Average of DEV3 AI and rules"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Rules only (AI still writes summaries)"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Hot lead from score"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Used for the Hot leads view, alerts and the dashboard."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Starting score"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Every entry starts here before signals add or remove points."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Signals (points)"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Keyword points"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Add or remove points when the answers contain a word or phrase, e.g. \"enterprise\" +20 or \"student\" −10."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Keyword"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Points"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Remove keyword rule"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Add keyword"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Auto-tags"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Tags added automatically when a condition matches, on capture and after every analysis."
+msgstr ""
+
+#: build/admin.js:10
+msgid "When"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Value"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Add tag"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Remove tag rule"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Add tag rule"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Tags suggested by DEV3 AI"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Keep as suggestions until someone accepts them"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Apply them automatically"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Try the rules"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Paste a sample submission to see the rule-based result. Nothing is saved and no AI is used."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Hi, we need a quote for a new website by next week. Budget around $5k."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Save and test"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Test"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Result"
+msgstr ""
+
+#: build/admin.js:10
+msgid "No tag rule matched."
+msgstr ""
+
+#. translators: %d: hot threshold
+#: build/admin.js:10
+#, js-format
+msgid "Run a test to see the score. Hot leads start at %d."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Save settings"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Automation, alerts and data handling."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Automation"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Analyze new entries with DEV3 AI automatically"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Runs in the background a few seconds after each submission, so forms never get slower. Turn it off per form on the Forms screen."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Without an API key, entries get rule-based insights only."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Email alerts"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Get an email when an entry needs you. Sent once per entry, after the analysis."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Send alerts"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Send to"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Comma-separated. Empty = the site admin email."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Hot leads (score at or above the threshold in Rules)"
+msgstr ""
+
+#: build/admin.js:10
+msgid "High urgency"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Negative sentiment"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Privacy & data"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Only text answers are sent to Google Gemini. Phone, password, hidden, file, signature, payment and consent fields are never sent, emails are reduced to their domain and names to the first name. Personal data export and erase requests (Tools → Export/Erase Personal Data) include captured entries."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Keep entries for (days)"
+msgstr ""
+
+#: build/admin.js:10
+msgid "0 keeps them forever. Older entries are deleted daily."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Store the page URL the form was sent from"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Delete all plugin data when the plugin is deleted"
+msgstr ""
+
+#: build/admin.js:10
+msgid "API Config"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Usage Logs"
+msgstr ""
+
+#: build/admin.js:10
+msgid "Connect Google Gemini, pick models and set a monthly AI budget."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Requests, tokens and estimated cost of every DEV3 AI feature."
+msgstr ""
+
+#: build/admin.js:10
+msgid "Made by DEV3 Technologies · AI by Google Gemini, using your own API key."
+msgstr ""

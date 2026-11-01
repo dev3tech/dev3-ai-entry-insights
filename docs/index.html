@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DEV3 AI Entry Insights for Gravity Forms &amp; WPForms: Documentation</title>
+<style>
+:root { --brand: #3730a3; --text: #1f2328; --muted: #4b5563; --line: #e3e6eb; --soft: #f6f7fb; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--text); background: #fff; }
+header { background: linear-gradient(135deg, #3730a3, #2563eb); color: #fff; padding: 40px 16px; }
+header .wrap, main { max-width: 980px; margin: 0 auto; }
+header h1 { margin: 0 0 6px; font-size: clamp(24px, 4vw, 34px); }
+header p { margin: 0; opacity: .92; }
+nav { position: sticky; top: 0; background: #fff; border-bottom: 1px solid var(--line); overflow-x: auto; white-space: nowrap; padding: 0 16px; z-index: 2; }
+nav a { display: inline-block; padding: 12px 10px; color: var(--muted); text-decoration: none; font-size: 14px; }
+nav a:hover, nav a:focus { color: var(--brand); }
+main { padding: 8px 16px 64px; }
+h2 { margin-top: 48px; padding-top: 8px; border-top: 1px solid var(--line); font-size: 24px; }
+h3 { margin-top: 28px; font-size: 18px; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13.5px; }
+code { background: var(--soft); padding: 2px 6px; border-radius: 4px; overflow-wrap: anywhere; }
+pre { background: #0f172a; color: #e2e8f0; padding: 16px; border-radius: 8px; overflow-x: auto; }
+pre code { background: none; padding: 0; color: inherit; }
+table { width: 100%; border-collapse: collapse; font-size: 14.5px; display: block; overflow-x: auto; }
+th, td { text-align: left; border-bottom: 1px solid var(--line); padding: 8px 10px; vertical-align: top; }
+th { background: var(--soft); }
+.note { background: #eef2ff; border-left: 4px solid var(--brand); padding: 12px 16px; border-radius: 6px; }
+.shots { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.shots figure { margin: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.shots img { width: 100%; height: 220px; object-fit: cover; object-position: top; display: block; }
+.shots figcaption { padding: 8px 12px; font-size: 14px; color: var(--muted); }
+</style>
+</head>
+<body>
+</head>
+<body>
+<header><div class="wrap">
+	<h1>DEV3 AI Entry Insights for Gravity Forms &amp; WPForms</h1>
+	<p>Version 1.0.0 · Summary, sentiment, intent, urgency and a lead score for every form entry, an insights dashboard, reply drafts and auto-tagging. Works with Gravity Forms, WPForms (Lite and Pro) and Contact Form 7.</p>
+</div></header>
+<nav aria-label="Sections">
+	<a href="#install">Install</a><a href="#key">Gemini key</a><a href="#adapters">Form plugins</a><a href="#insights">Entry insights</a><a href="#inbox">Entries</a><a href="#dashboard">Dashboard</a><a href="#rules">Rules &amp; tags</a><a href="#replies">Replies</a><a href="#settings">Settings</a><a href="#privacy">Privacy</a><a href="#hooks">Hooks</a><a href="#faq">FAQ</a><a href="#changelog">Changelog</a>
+</nav>
+<main>
+<h2 id="install">Installation</h2>
+<ol>
+	<li>In WordPress go to <strong>Plugins → Add New → Upload Plugin</strong> and upload <code>dev3-ai-entry-insights.zip</code>. Activate it.</li>
+	<li>Make sure at least one supported form plugin is active: Gravity Forms 2.5+, WPForms Lite/Pro 1.8+ or Contact Form 7 5.8+.</li>
+	<li>Open <strong>DEV3 AI Entry Insights</strong> in the admin menu. New submissions are captured from now on. Older Gravity Forms and WPForms Pro entries can be imported on the <strong>Forms</strong> screen.</li>
+</ol>
+<p>Requirements: WordPress 6.0+, PHP 7.4+ (tested on 8.3). No licence key or activation is needed.</p>
+
+<h2 id="key">Google Gemini API key</h2>
+<ol>
+	<li>Go to <a href="https://aistudio.google.com/apikey">Google AI Studio</a> and create an API key.</li>
+	<li>Paste it in <strong>API Config</strong> and click <em>Validate</em>. The key is stored encrypted and never sent to the browser. You can also define <code>DEV3EI_GEMINI_API_KEY</code> in <code>wp-config.php</code>.</li>
+	<li>Optional: choose models (default <code>gemini-2.5-flash</code>), set a monthly budget cap and turn AI off at any time. <strong>Usage Logs</strong> shows requests, tokens and estimated cost.</li>
+</ol>
+<p class="note">Without a key everything still works with rule-based insights: scores, sentiment, urgency, categories, tags, alerts, templates, the dashboard and CSV export.</p>
+
+<h2 id="adapters">Supported form plugins</h2>
+<table>
+	<tr><th>Plugin</th><th>How entries are captured</th><th>Import of older entries</th></tr>
+	<tr><td>Gravity Forms</td><td><code>gform_after_submission</code> (spam and trash skipped). Compound fields (Name, Address, Checkbox) are flattened. An insights meta box appears on the Gravity Forms entry screen, and you can add the insights as an entry note.</td><td>Yes, through <code>GFAPI::get_entries</code>.</td></tr>
+	<tr><td>WPForms Lite / Pro</td><td><code>wpforms_process_complete</code>. WPForms Lite keeps no entries, so this plugin stores its own copy. Spam-marked submissions are skipped.</td><td>Pro only (Lite stores nothing).</td></tr>
+	<tr><td>Contact Form 7</td><td><code>wpcf7_mail_sent</code> and <code>wpcf7_mail_failed</code>, so a broken mailer never loses a lead. Labels come from the form template.</td><td>No (CF7 stores nothing).</td></tr>
+</table>
+<p>On <strong>Forms</strong> you can switch capture and AI analysis off per form, turn a whole plugin off, re-score everything with your rules, or analyse all unanalysed entries with DEV3 AI in the background.</p>
+
+<h2 id="insights">Entry insights</h2>
+<p>Every entry gets, right after it is captured:</p>
+<ul>
+	<li><strong>Rule-based values</strong> (instant, no network): lead score with reasons, sentiment, urgency, category, rule tags.</li>
+	<li><strong>DEV3 AI analysis</strong> (a few seconds later, in the background so the form never gets slower): a 1–2 sentence summary, intent, sentiment, category (sales lead, quote request, support, feedback, complaint, booking, job application, partnership, newsletter, spam, other), urgency, lead score 0–100 with a reason, language and up to 5 suggested tags.</li>
+</ul>
+<p>If the AI call fails, the rule values stay and the error is shown on the entry. Use <em>Re-analyze with DEV3 AI</em> in the entry drawer, or the bulk action, at any time.</p>
+
+<h2 id="inbox">Entries inbox</h2>
+<p>Views: Inbox, New, Hot leads, Needs attention (open entries that are urgent, unhappy or hot), Starred, Replied, Archived. Filter by form, source, sentiment, category, urgency, tag and minimum score; search names, emails and answers; sort by date or score. Bulk actions: mark read/new, star, add/remove tag, archive, analyse with DEV3 AI, re-score with rules, delete. <strong>Export CSV</strong> exports the current filter, with spreadsheet formulas neutralised.</p>
+<p>Click an entry to open the drawer: score gauge, summary, intent, badges, tags (accept or dismiss AI suggestions, add your own), all answers, the reply composer, an internal note and the history.</p>
+
+<h2 id="dashboard">Insights dashboard</h2>
+<p>KPIs for 7, 30 or 90 days (entries with trend, average lead score, hot leads, negative share, needs attention, reply rate), entries per day by sentiment, lead-score distribution, categories, top intents, tags, a needs-attention list and per-form quality. <strong>Summarize trends with DEV3 AI</strong> writes a digest (headline, themes, opportunities, risks, actions) from the statistics and the one-line summaries only; it is a draft until you pin it.</p>
+
+<h2 id="rules">Rules &amp; auto-tags</h2>
+<ul>
+	<li><strong>Score source:</strong> DEV3 AI score, rules only, or the average of both.</li>
+	<li><strong>Hot lead threshold</strong> (default 70) and <strong>starting score</strong> (default 20).</li>
+	<li><strong>Signals</strong> with editable points: phone left, company email, company field, budget field, buying words, tight timeline, detailed message, unhappy tone.</li>
+	<li><strong>Keyword points</strong>, e.g. <code>enterprise +20</code>, <code>student −15</code>.</li>
+	<li><strong>Auto-tags:</strong> when answers contain words, category/sentiment/urgency is, score is at least, form plugin or form is → add a tag. Tags added by a rule disappear again when the rule stops matching; tags you add stay.</li>
+	<li><strong>AI tags</strong> stay suggestions until accepted, unless you choose to apply them automatically.</li>
+	<li><strong>Try the rules</strong> scores a sample message without saving anything or calling the AI.</li>
+</ul>
+
+<h2 id="replies">Replies</h2>
+<p><strong>Draft reply with DEV3 AI</strong> writes a reply in the sender's language using your tone, sign-off and facts. Add notes for one reply (e.g. a price or a date). The draft opens in the review panel: edit subject and message, then <em>Send</em>, or regenerate or reject it. Nothing is sent automatically. Templates with <code>{name}</code>, <code>{first_name}</code>, <code>{form}</code>, <code>{site}</code>, <code>{summary}</code>, <code>{email}</code> work without AI. Replies are plain-text emails sent with <code>wp_mail</code> from the From name/address you set.</p>
+
+<h2 id="settings">Settings</h2>
+<ul>
+	<li>Analyze new entries automatically (on by default when a key is set).</li>
+	<li>Email alerts for hot leads, high urgency and/or negative sentiment, once per entry, to a list of addresses (default: the admin email).</li>
+	<li>Retention in days (0 = keep forever), storing the page URL, deleting all data on uninstall.</li>
+</ul>
+
+<h2 id="privacy">Privacy</h2>
+<p>Only text answers are sent to Google Gemini. Phone, password, hidden, file, signature, payment and consent fields are never sent; emails are reduced to their domain and names to the first name. Passwords and card fields are not even stored. The core PII-masking option can mask the rest. Captured entries are included in WordPress's personal data export and erase tools. A privacy-policy text naming Google Gemini is added under Settings → Privacy.</p>
+
+<h2 id="hooks">Hooks for developers</h2>
+<table>
+	<tr><th>Hook</th><th>Type</th><th>Use</th></tr>
+	<tr><td><code>dev3ei_adapters</code></td><td>filter</td><td>Add an adapter (extend <code>Dev3\AiEntryInsights\Adapters\Adapter</code>) for another form plugin.</td></tr>
+	<tr><td><code>dev3ei_capture_fields</code></td><td>filter</td><td>Change the normalised fields <code>[ {key,label,type,value} ]</code> before storage.</td></tr>
+	<tr><td><code>dev3ei_should_capture</code></td><td>filter</td><td>Return false to skip a submission.</td></tr>
+	<tr><td><code>dev3ei_entry_captured</code></td><td>action</td><td><code>( $id, $source, $form_id )</code> after capture.</td></tr>
+	<tr><td><code>dev3ei_entry_analyzed</code></td><td>action</td><td><code>( $entry, $ai )</code> after every analysis (push hot leads to a CRM).</td></tr>
+	<tr><td><code>dev3ei_rule_category_patterns</code></td><td>filter</td><td>Keyword regexes for rule-based categories.</td></tr>
+	<tr><td><code>dev3ei_rule_tags</code></td><td>filter</td><td>Tags added by rules for an entry.</td></tr>
+	<tr><td><code>dev3ei_alert_email</code> / <code>dev3ei_reply_email</code></td><td>filter</td><td>Change alert or reply emails before sending.</td></tr>
+	<tr><td><code>dev3ei_prompt_entry_insights</code>, <code>dev3ei_prompt_reply_draft</code>, <code>dev3ei_prompt_trend_digest</code></td><td>filter</td><td>Override prompt templates.</td></tr>
+	<tr><td><code>dev3ei_queue_stale_after</code></td><td>filter</td><td>Seconds before the admin screens process waiting entries inline (default 30).</td></tr>
+</table>
+<p>REST API (<code>dev3ei/v1</code>, admins only, nonce required): <code>entries</code>, <code>entries/&lt;id&gt;</code>, <code>entries/bulk</code>, <code>entries/&lt;id&gt;/analyze</code>, <code>…/reply-draft</code>, <code>…/reply</code>, <code>…/template</code>, <code>…/tags/accept</code>, <code>…/gf-note</code>, <code>stats</code>, <code>digest</code>, <code>digest/pin</code>, <code>forms</code>, <code>forms/config</code>, <code>forms/import</code>, <code>analyze-all</code>, <code>rules/preview</code>.</p>
+
+<h2 id="faq">FAQ</h2>
+<h3>Does it slow down my forms?</h3><p>No. Capture only saves the entry and applies the rules; the AI runs in the background (WP-Cron) or when you open the plugin.</p>
+<h3>Do I need Gravity Forms <em>and</em> WPForms?</h3><p>No. Any one of Gravity Forms, WPForms or Contact Form 7 is enough, and you can use several at once.</p>
+<h3>Where are WPForms Lite entries stored?</h3><p>In this plugin's own table (<code>wp_dev3ei_entries</code>), because WPForms Lite does not store entries.</p>
+<h3>Does deleting an entry here delete it in Gravity Forms?</h3><p>No. Deleting a Gravity Forms entry removes our copy, but not the other way round.</p>
+<h3>What does the AI cost?</h3><p>One short gemini-2.5-flash call per entry (a fraction of a cent). Set a monthly cap in API Config.</p>
+<h3>My site cannot reach itself (WP-Cron)</h3><p>Entries waiting for AI are processed while the plugin screens are open. You can also run a real cron job.</p>
+
+<h2>Screenshots</h2>
+<div class="shots">
+	<figure><img src="screenshots/1-insights-dashboard.png" alt="Insights dashboard"><figcaption>Insights dashboard with trend digest</figcaption></figure>
+	<figure><img src="screenshots/2-entries-inbox.png" alt="Entries inbox"><figcaption>Entries inbox</figcaption></figure>
+	<figure><img src="screenshots/3-entry-insights.png" alt="Entry insights"><figcaption>Entry insights drawer</figcaption></figure>
+	<figure><img src="screenshots/4-ai-reply-draft.png" alt="AI reply draft"><figcaption>Reviewing a DEV3 AI reply draft</figcaption></figure>
+	<figure><img src="screenshots/5-forms.png" alt="Forms"><figcaption>Connected forms</figcaption></figure>
+	<figure><img src="screenshots/6-mobile-entry.png" alt="Mobile"><figcaption>Works on phones</figcaption></figure>
+</div>
+
+<h2 id="changelog">Changelog</h2>
+<h3>1.0.0 · 25 October 2026</h3>
+<ul><li>Initial release: Gravity Forms, WPForms and Contact Form 7 adapters, entry insights, inbox, dashboard and trend digest, rules and auto-tags, reply drafts and templates, alerts, CSV export, privacy tools.</li></ul>
+</main>
+</body>
+</html>
